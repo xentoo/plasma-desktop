@@ -79,8 +79,6 @@ Dtime::Dtime(QWidget *parent)
 
     kclock->setEnabled(false);
 
-    tabWidget->tabBar()->setExpanding(true);
-
     auto engine = timezoneViewer->engine();
     engine->rootContext()->setContextObject(new KLocalizedContext(engine));
 

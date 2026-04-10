@@ -8,7 +8,6 @@
 #include <KCModule>
 
 class Dtime;
-class QTabWidget;
 
 class KclockModule : public KCModule
 {
@@ -23,6 +22,5 @@ public:
 private:
     bool timedatedSave();
 
-    QTabWidget *tab;
     Dtime *dtime;
 };
