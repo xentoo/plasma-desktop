@@ -39,6 +39,9 @@
     <entry name="ZoomUsePatternUpscaler" key="UsePatternUpscaler" type="Bool">
         <default>true</default>
     </entry>
+    <entry name="ZoomPushEdgeThreshold" key="PushEdgeThreshold" type="Double">
+      <default>0.01</default>
+    </entry>
   </group>
   <group name="Effect-magnifier">
     <entry name="MagnifierWidth" key="Width" type="UInt">

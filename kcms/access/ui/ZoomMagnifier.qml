@@ -162,6 +162,34 @@ Kirigami.FormLayout {
                 }
             }
 
+            QQC2.SpinBox {
+                id: zoomEdgePushThresholdSpinBox
+                Kirigami.FormData.label: i18nc("@label:spinbox", "Push edge margin:")
+
+                stepSize: 1
+
+                from: 0
+                to: 75
+
+                validator: IntValidator {
+                    bottom: Math.min(zoomEdgePushThresholdSpinBox.from, zoomEdgePushThresholdSpinBox.to)
+                    top: Math.max(zoomEdgePushThresholdSpinBox.from, zoomEdgePushThresholdSpinBox.to)
+                }
+
+                textFromValue: (value, locale) =>
+                    i18nc("Zoom edge push margin expressed in percentage form", "%1%",
+                        (value).toLocaleString(locale, 'f', 0))
+                valueFromText: (text, locale) =>
+                    Number.fromLocaleString(locale, text.replace("%", ""))
+                value: kcm.zoomMagnifierSettings.zoomPushEdgeThreshold * 100
+                onValueModified: kcm.zoomMagnifierSettings.zoomPushEdgeThreshold = value / 100
+
+                KCM.SettingStateBinding {
+                    configObject: kcm.zoomMagnifierSettings
+                    settingName: "zoomPushEdgeThreshold"
+                }
+            }
+
             QQC2.CheckBox {
                 text: i18nc("@option:check", "Sharpen screen content while zoomed in")
                 checked: kcm.zoomMagnifierSettings.zoomUsePatternUpscaler
