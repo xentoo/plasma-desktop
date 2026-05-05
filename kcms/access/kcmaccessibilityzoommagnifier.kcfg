@@ -42,6 +42,9 @@
     <entry name="ZoomPushEdgeThreshold" key="PushEdgeThreshold" type="Double">
       <default>0.01</default>
     </entry>
+    <entry name="ZoomPushEdgeThresholdFocusTracking" key="PushEdgeThresholdFocusTracking" type="Double">
+      <default>0.01</default>
+    </entry>
   </group>
   <group name="Effect-magnifier">
     <entry name="MagnifierWidth" key="Width" type="UInt">

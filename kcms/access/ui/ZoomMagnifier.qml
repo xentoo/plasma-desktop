@@ -190,6 +190,34 @@ Kirigami.FormLayout {
                 }
             }
 
+            QQC2.SpinBox {
+                id: zoomEdgePushThresholdFocusTrackingSpinBox
+                Kirigami.FormData.label: i18nc("@label:spinbox", "Push edge margin for Focus/Caret Tracking:")
+
+                stepSize: 1
+
+                from: 0
+                to: 75
+
+                validator: IntValidator {
+                    bottom: Math.min(zoomEdgePushThresholdFocusTrackingSpinBox.from, zoomEdgePushThresholdFocusTrackingSpinBox.to)
+                    top: Math.max(zoomEdgePushThresholdFocusTrackingSpinBox.from, zoomEdgePushThresholdFocusTrackingSpinBox.to)
+                }
+
+                textFromValue: (value, locale) =>
+                    i18nc("Zoom edge push margin for focus tracking, expressed in percentage form", "%1%",
+                        (value).toLocaleString(locale, 'f', 0))
+                valueFromText: (text, locale) =>
+                    Number.fromLocaleString(locale, text.replace("%", ""))
+                value: kcm.zoomMagnifierSettings.zoomPushEdgeThresholdFocusTracking * 100
+                onValueModified: kcm.zoomMagnifierSettings.zoomPushEdgeThresholdFocusTracking = value / 100
+
+                KCM.SettingStateBinding {
+                    configObject: kcm.zoomMagnifierSettings
+                    settingName: "zoomPushEdgeThresholdFocusTracking"
+                }
+            }
+
             QQC2.CheckBox {
                 text: i18nc("@option:check", "Sharpen screen content while zoomed in")
                 checked: kcm.zoomMagnifierSettings.zoomUsePatternUpscaler

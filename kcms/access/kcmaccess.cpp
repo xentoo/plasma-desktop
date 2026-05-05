@@ -286,7 +286,8 @@ void KAccessConfig::save()
         || m_data->zoomMagnifierSettings()->findItem(QStringLiteral("ZoomUsePatternUpscaler"))->isSaveNeeded()
         || m_data->zoomMagnifierSettings()->findItem(QStringLiteral("ZoomPixelGridZoom"))->isSaveNeeded()
         || m_data->zoomMagnifierSettings()->findItem(QStringLiteral("ZoomPointerAxisGestureModifiers"))->isSaveNeeded()
-        || m_data->zoomMagnifierSettings()->findItem(QStringLiteral("ZoomPushEdgeThreshold"))->isSaveNeeded();
+        || m_data->zoomMagnifierSettings()->findItem(QStringLiteral("ZoomPushEdgeThreshold"))->isSaveNeeded()
+        || m_data->zoomMagnifierSettings()->findItem(QStringLiteral("ZoomPushEdgeThresholdFocusTracking"))->isSaveNeeded();
     const bool magnifierSettingsSaveNeeded = m_data->zoomMagnifierSettings()->findItem(QStringLiteral("SharedZoomFactor"))->isSaveNeeded()
         || m_data->zoomMagnifierSettings()->findItem(QStringLiteral("MagnifierWidth"))->isSaveNeeded()
         || m_data->zoomMagnifierSettings()->findItem(QStringLiteral("MagnifierHeight"))->isSaveNeeded();
