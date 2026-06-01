@@ -67,7 +67,7 @@
       <string>When this is not checked, only remembered devices will be automatically mounted. A device is 'remembered' if it has ever been mounted before. For instance, plugging in a USB media player to charge is not sufficient to 'remember' it - if the files are not accessed, it will not be automatically mounted the next time it is seen. Once they have been accessed, however, the device's contents will be automatically made available to the system.</string>
      </property>
      <property name="text">
-      <string>Automatically mount removable media that have never been mounted before</string>
+      <string>Automatically mount removable media that has never been mounted before</string>
      </property>
     </widget>
    </item>
